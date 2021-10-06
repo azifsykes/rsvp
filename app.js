@@ -19,8 +19,18 @@ app.set('view engine', 'handlebars');
 // })
 
 // Render the "home" layout for the main page and send the following msg
+// app.get('/', (req, res) => {
+//   res.render('home', { msg: 'Handlebars are Cool!' });
+// })
+
+var events = [
+  {title: 'first event', desc: 'a great first event'},
+  {title: 'second event', desc: 'a great second event'},
+  {title: 'third event', desc: 'a great third event'},
+]
+
 app.get('/', (req, res) => {
-  res.render('home', { msg: 'Handlebars are Cool!' });
+  res.render('events', { events: events });
 })
 
 // Choose a port to listen on
