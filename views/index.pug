@@ -1,0 +1,21 @@
+extends layout
+block variables
+
+
+block content
+
+  .container-fluid 
+    .row.mt-4 
+      .col-lg-6
+        h1 Events
+
+        each event in events
+          .card.mt-3 
+            .card-body
+              h2.card-title !{event.title}
+              p.card-text !{event.desc}
+              .text-right 
+                a.btn.btn-info.mr-2(href="") Rsvp
+                a.btn.btn-primary(href="") View
+
+//- block postcontent

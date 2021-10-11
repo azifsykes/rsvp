@@ -2,15 +2,13 @@
 const express = require('express')
 const app = express()
 // require handlebars
-const exphbs = require('express-handlebars')
-const Handlebars = require('handlebars')
-const {allowInsecurePrototypeAccess} = require('@handlebars/allow-prototype-access')
+// const exphbs = require('express-handlebars')
+// const Handlebars = require('handlebars')
+// const {allowInsecurePrototypeAccess} = require('@handlebars/allow-prototype-access')
 
 
-// Use "main" as our default layout
-app.engine('handlebars', exphbs({ defaultLayout: 'main', handlebars: allowInsecurePrototypeAccess(Handlebars) }));
-// Use handlebars to render
-app.set('view engine', 'handlebars');
+// Use pug to render
+app.set('view engine', 'pug');
 
 // Tell our app to send the "hello world" message to our home page
 // app.get('/', (req, res) => {
@@ -30,7 +28,7 @@ var events = [
 ]
 
 app.get('/', (req, res) => {
-  res.render('events', { events: events });
+  res.render('index', { events: events });
 })
 
 // Choose a port to listen on
